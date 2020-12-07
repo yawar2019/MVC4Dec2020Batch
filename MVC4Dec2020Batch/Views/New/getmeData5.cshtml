@@ -1,0 +1,38 @@
+﻿@model MVC4Dec2020Batch.Models.StudentFaculty
+@{
+    ViewBag.Title = "getmeData5";
+}
+
+<h2>getmeData5</h2>
+<h2>Student Information</h2>
+<table class="table table-condensed table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Student Name</th>
+        <th>Course</th>
+    </tr>
+    @foreach (var item in Model.st)
+    {
+        <tr>
+            <td>@item.studId</td>
+            <td>@item.StudentName</td>
+            <td>@item.Course</td>
+        </tr>
+    }
+</table>
+<br />
+<h2>Faculty Information</h2>
+<table class="table table-condensed table-striped">
+    <tr>
+        <th>Id </th>
+        <th> Name</th>
+    </tr>
+
+    @foreach (var item in Model.ft)
+    {
+        <tr>
+            <td>@item.FacultyId</td>
+            <td>@item.Name</td>
+        </tr>
+    }
+</table>

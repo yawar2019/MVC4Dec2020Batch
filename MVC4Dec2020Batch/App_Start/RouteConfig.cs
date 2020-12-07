@@ -14,10 +14,16 @@ namespace MVC4Dec2020Batch
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                name: "xyz",
+                url: "PistaHouse/Cake",
+                defaults: new { controller = "New", action = "CompanyName", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+               name: "Default",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "New", action = "Index", id = UrlParameter.Optional }
+           );
         }
     }
 }
