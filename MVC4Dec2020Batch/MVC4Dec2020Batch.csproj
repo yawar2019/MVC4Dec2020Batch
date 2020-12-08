@@ -163,6 +163,8 @@
     <Content Include="Views\New\getmeData3.cshtml" />
     <Content Include="Views\New\getmeData4.cshtml" />
     <Content Include="Views\New\getmeData5.cshtml" />
+    <Content Include="Views\New\GetPartialView.cshtml" />
+    <Content Include="Views\Shared\_MypartialView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
