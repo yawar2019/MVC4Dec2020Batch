@@ -218,7 +218,13 @@ namespace MVC4Dec2020Batch.Controllers
 
         public ActionResult GetPartialView()
         {
-            return View();
+
+            Faculty fobj = new Faculty();
+            fobj.FacultyId = 1211;
+            fobj.Name = "Rahul";
+
+
+            return View(fobj);
         }
     }
 }

@@ -1,8 +1,12 @@
-﻿
+﻿@model MVC4Dec2020Batch.Models.Faculty
 @{
     ViewBag.Title = "GetPartialView";
 }
 
 <h2>GetPartialView</h2>
 
-@Html.Partial("_MypartialView")
+@{var s = Html.Partial("_MypartialView", Model);
+    if (1 == 1) { @s}
+    }
+
+@{Html.RenderPartial("_MypartialView", Model);}
