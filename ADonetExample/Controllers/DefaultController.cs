@@ -30,5 +30,51 @@ namespace ADonetExample.Controllers
 
             return View();
         }
+        [HttpGet]
+        public ActionResult Edit(int ? id)
+        {
+            EmployeeModel obj = db.getEmployeeByEmpId(id);
+
+            return View(obj);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(EmployeeModel emp)
+        {
+            int i = db.updateEmployeeByEmpId(emp);
+            if (i > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(emp);
+
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            EmployeeModel obj = db.getEmployeeByEmpId(id);
+
+            return View(obj);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int? id)
+        {
+            int i = db.deleteEmployeeByEmpId(id);
+            if (i > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+
+            }
+        }
     }
 }
