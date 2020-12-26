@@ -11,10 +11,13 @@ namespace ModelBasedApproach.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+
     public partial class Doctor
     {
         public int DoctorId { get; set; }
+    
         public string DoctorName { get; set; }
         public string Salary { get; set; }
     }

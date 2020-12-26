@@ -1,0 +1,50 @@
+﻿@model ModelBasedApproach.Models.Doctor
+    @using ModelBasedApproach.MyUserControl
+@{
+    ViewBag.Title = "HtmlHelperExample";
+}
+
+<script>
+    function fun() {
+        alert("Hello World");
+    }
+</script>
+
+<h2>HtmlHelperExample</h2>
+
+@Html.TextBox("FirstName",null,new {style = "background-color:red;", @class="form-control", @onclick = "fun()" })<br />
+<input type="text" name="LastName" value="Vidhi" style="background-color:brown;" class="form-control" onclick="fun()" />
+@Html.TextBoxFor(s=>s.DoctorName, new { style = "background-color:red;", @class = "form-control", @onclick = "fun()" })
+@Html.LabelFor(s=>s.DoctorName)
+
+<span>Male</span>@Html.RadioButton("Gender", "Male",true)<br />
+<span>Female</span>@Html.RadioButton("Gender", "FeMale")<br />
+
+<span>Course:</span>@Html.CheckBox("java")<span>Java</span>@Html.CheckBox("DotNet")<span>Dotnet</span>
+
+<br />
+
+<span>Country</span>
+@Html.DropDownList("Country",new List<SelectListItem>()
+{
+    new SelectListItem {Text="India",Value="1"},
+    new SelectListItem {Text="China",Value="2",Selected=true},
+    new SelectListItem {Text="Bangladesh",Value="3"},
+    new SelectListItem {Text="Japan",Value="4",Disabled=true},
+
+},"Select Country",new {@class="form-control"})<br />
+@Html.DropDownList("Doctors")
+@Html.DropDownList("ddlDoctors",(IEnumerable<SelectListItem>)ViewBag.Doctors)
+
+<br />
+@myHtmlHelper.MyLabel("I Accept the Agreement")
+<br />
+@Html.createUrControl("text")<br />
+@Html.createUrControl("file")<br />
+@Html.createUrControl("checkbox")<br />
+<br />
+@helper labelbyrazzorcode(string content)
+{
+    <label>@content</label>
+}
+@labelbyrazzorcode("great to see u")
