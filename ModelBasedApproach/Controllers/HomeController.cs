@@ -20,5 +20,24 @@ namespace ModelBasedApproach.Controllers
             ViewBag.Doctors = new SelectList(db.Doctors.ToList(), "DoctorId", "DoctorName",3);
             return View(obj);
         }
+
+        public ActionResult ValidationExample()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ValidationExample(RegistrationForm reg)
+        {
+            if (ModelState.IsValid)
+            {
+                return Redirect("~/Home/ValidationExample");
+            }
+            else
+            {
+                return View(reg);
+            }
+           
+        }
     }
 }
