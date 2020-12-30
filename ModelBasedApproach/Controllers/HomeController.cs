@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace ModelBasedApproach.Controllers
 {
@@ -12,6 +13,7 @@ namespace ModelBasedApproach.Controllers
     {
         // GET: Home
         DoctorModelContainer db = new DoctorModelContainer();
+        redchilliEntities db1 = new redchilliEntities();
         public ActionResult HtmlHelperExample()
         {
             Doctor obj = new Models.Doctor();
@@ -38,6 +40,42 @@ namespace ModelBasedApproach.Controllers
                 return View(reg);
             }
            
+        }
+
+
+
+        public ActionResult Login() {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(User user)
+        {
+            var userdetails = db1.Users.Where(s => s.UserName == user.UserName && s.Password == user.Password).SingleOrDefault();
+           if (userdetails != null)
+            {
+                FormsAuthentication.SetAuthCookie(user.UserName, false);
+
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+
+            }
+        }
+        [Authorize]
+        public ActionResult Index()
+        {
+
+            return View();
+        }
+        [Authorize]
+        [HttpGet]
+        public ActionResult SignOut()
+        {
+            FormsAuthentication.SignOut();
+            return View("Login");
         }
     }
 }

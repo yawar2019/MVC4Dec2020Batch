@@ -143,11 +143,28 @@
       <LastGenOutput>DoctorModel.cs</LastGenOutput>
       <DependentUpon>DoctorModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\RedchilliModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RedchilliModel.edmx</DependentUpon>
+      <LastGenOutput>RedchilliModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RedchilliModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RedchilliModel.edmx</DependentUpon>
+      <LastGenOutput>RedchilliModel.cs</LastGenOutput>
+    </Content>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <EntityDeploy Include="Models\RedchilliModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RedchilliModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RedchilliModel.edmx.diagram">
+      <DependentUpon>RedchilliModel.edmx</DependentUpon>
+    </Content>
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
@@ -186,7 +203,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DoctorModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\RedchilliModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RedchilliModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RedchilliModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RedchilliModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RedchilliModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RedchilliModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\RegistrationForm.cs" />
+    <Compile Include="Models\User.cs">
+      <DependentUpon>RedchilliModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserRole.cs">
+      <DependentUpon>RedchilliModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControl\myHtmlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -213,6 +251,8 @@
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\HtmlHelperExample.cshtml" />
     <Content Include="Views\Home\ValidationExample.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
