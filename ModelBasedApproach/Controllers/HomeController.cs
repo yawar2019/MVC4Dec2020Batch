@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-
+ 
 namespace ModelBasedApproach.Controllers
 {
    
@@ -70,7 +70,7 @@ namespace ModelBasedApproach.Controllers
 
             return View();
         }
-        [Authorize]
+     
         [HttpGet]
         public ActionResult SignOut()
         {
