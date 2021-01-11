@@ -13,6 +13,7 @@ namespace WebApplication2.Controllers
         [MyFilter]
         public ActionResult Index()
         {
+            ViewBag.player = "Ritu";
             return View();
         }
 
@@ -22,11 +23,18 @@ namespace WebApplication2.Controllers
 
             return View();
         }
-
+     
         public ActionResult Contact()
         {
-            
-            ViewBag.Message = "Your contact page.";
+            try
+            {
+                int a = 10, b = 0;
+                var result = a / b;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
 
             return View();
         }

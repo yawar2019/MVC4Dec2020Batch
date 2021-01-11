@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC4Dec2020Batch", "MVC4Dec2020Batch\MVC4Dec2020Batch.csproj", "{86D500B2-FF41-4CAC-8A16-3522D1BA613D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADonetExample", "ADonetExample\ADonetExample.csproj", "{14A72BA5-E807-4853-B934-5B1CC817F44B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C73A8465-EFB6-4B11-B268-4C6FF496980F} = {C73A8465-EFB6-4B11-B268-4C6FF496980F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBasedApproach", "DataBasedApproach\DataBasedApproach.csproj", "{B6BC5D63-6D29-45E1-A7FA-43E981B97558}"
 EndProject
@@ -16,6 +19,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{833E0DBD-6A3A-4694-BFA0-42B763EF7F1B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{C73A8465-EFB6-4B11-B268-4C6FF496980F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{BF489BBB-F4E6-4B0B-92FB-93884C531E4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +56,10 @@ Global
 		{C73A8465-EFB6-4B11-B268-4C6FF496980F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C73A8465-EFB6-4B11-B268-4C6FF496980F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C73A8465-EFB6-4B11-B268-4C6FF496980F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF489BBB-F4E6-4B0B-92FB-93884C531E4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF489BBB-F4E6-4B0B-92FB-93884C531E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF489BBB-F4E6-4B0B-92FB-93884C531E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF489BBB-F4E6-4B0B-92FB-93884C531E4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

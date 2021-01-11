@@ -6,27 +6,20 @@ using System.Web.Mvc;
 
 namespace WebApplication2.Filter
 {
-    [AttributeUsage(AttributeTargets.Method)]
-    public class MyFilter :Attribute,IActionFilter,IResultFilter
+    
+    public class MyFilter:ActionFilterAttribute
     {
-        public void OnActionExecuted(ActionExecutedContext filterContext)
+        public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            throw new NotImplementedException();
+            base.OnActionExecuted(filterContext);
         }
-
-        public void OnActionExecuting(ActionExecutingContext filterContext)
+        public override void OnResultExecuting(ResultExecutingContext filterContext)
         {
-            throw new NotImplementedException();
+            (filterContext.Result as ViewResult).ViewBag.player = "Vidhi";
+
         }
-
-        public void OnResultExecuted(ResultExecutedContext filterContext)
+        public override void OnResultExecuted(ResultExecutedContext filterContext)
         {
-            throw new NotImplementedException();
-        }
-
-        public void OnResultExecuting(ResultExecutingContext filterContext)
-        {
-            throw new NotImplementedException();
         }
     }
 }

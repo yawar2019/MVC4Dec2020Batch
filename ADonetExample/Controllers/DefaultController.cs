@@ -76,5 +76,14 @@ namespace ADonetExample.Controllers
 
             }
         }
+
+
+        public ActionResult getMyService()
+        {
+            //ServiceReference1.WebService1SoapClient obj= new ServiceReference1.WebService1SoapClient();
+            ServiceReference2.Service1Client obj = new ServiceReference2.Service1Client();
+            ViewBag.Add=obj.Add(10, 30);
+            return View();
+        }
     }
 }
